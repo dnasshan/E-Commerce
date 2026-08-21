@@ -139,6 +139,7 @@ button:active {
 
 .container {
     padding: 56px 0;
+    z-index: 2;
 }
 
 .row {
@@ -156,33 +157,28 @@ Highlights
 #highlights {
     background-color: white;
     position: relative;
+    z-index: 3;
 }
 
-#highlights:before {
-    background-image: url(assets/wave.svg);
+#highlights:after, #highlights:before {
+    background: url(assets/wave.svg);
     content: "";
     position: absolute;
-    width: 100vw;
-    height: 12vh;
-    top: 1px;
+    width: 101vw;
+    height: 12vw;
     left: 0;
     z-index: 1;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#highlights:before {
+    top: 1px;
     transform:translateY(-100%)
 }
 
 #highlights::after {
-    background: url(assets/wave.svg);
-    content: "";
-    position: absolute;
-    width: 100vw;
-    height: 12vh;
     bottom: 1px;
-    left: 0;
-    z-index: 1;
-    background-size: cover;
-    background-repeat: no-repeat;
     transform:translateY(100%) rotate(180deg);
 
 }
@@ -231,8 +227,55 @@ Features
 */
 
 #features {
-    height: 1000px;
+    padding-top: 8vw;
     background-color: rgba(115, 66, 214, 0.1);
 }
 
-39:00 vid
+.books {
+    display: flex;
+}
+
+.book {
+    width:25%;
+
+}
+
+.book__img {
+    max-height: 380px;
+    transition: all 300ms ease;
+    cursor: not-allowed;
+}
+
+.book__img--wrapper {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.book:hover .book__img {
+    transform: scale(1.03);
+}
+
+.book__title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.book__title:hover {
+    text-decoration: underline;
+    cursor: not-allowed;
+}
+
+.book__ratings {
+    margin-bottom: 8px;
+    color: #fabf2a
+}
+
+.book__price--normal {
+    text-decoration: line-through;
+    padding-right: 6px;
+    color: #888;
+}
+
+48:00 vid
